@@ -104,13 +104,14 @@ export const NessusLabs = () => {
                   className="flex-1" 
                   variant={lab.status === 'locked' ? 'ghost' : 'default'}
                   disabled={lab.status === 'locked'}
+                  onClick={() => window.location.href = `/lab/${lab.id}`}
                 >
                   {lab.status === 'completed' ? 'Review Lab' : 
                    lab.status === 'in-progress' ? 'Continue Lab' : 
                    lab.status === 'locked' ? 'Locked' : 'Start Lab'}
                 </Button>
                 {lab.status !== 'locked' && (
-                  <Button variant="ghost" size="sm">Info</Button>
+                  <Button variant="ghost" size="sm" onClick={() => window.location.href = `/lab/${lab.id}`}>Info</Button>
                 )}
               </div>
             </CardContent>

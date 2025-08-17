@@ -111,10 +111,20 @@ export const LearningPaths = () => {
                 </div>
                 
                 <div className="flex gap-2 pt-2">
-                  <Button className="flex-1" variant={path.progress > 0 ? "default" : "outline"}>
+                  <Button 
+                    className="flex-1" 
+                    variant={path.progress > 0 ? "default" : "outline"}
+                    onClick={() => window.location.href = `/path/${path.id}`}
+                  >
                     {path.progress > 0 ? "Continue" : "Start Learning"}
                   </Button>
-                  <Button variant="ghost" size="sm">Preview</Button>
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    onClick={() => window.location.href = `/path/${path.id}`}
+                  >
+                    Preview
+                  </Button>
                 </div>
               </CardContent>
             </Card>

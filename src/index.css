@@ -57,6 +57,16 @@
     --shadow-success: 0 0 20px hsl(142 76% 36% / 0.3);
     --shadow-card: 0 8px 32px hsl(220 17% 7% / 0.5);
 
+    /* Terminal colors */
+    --terminal-bg: 220 13% 9%;
+    --terminal-border: 220 13% 18%;
+    --terminal-text: 220 10% 90%;
+    --terminal-input: 142 70% 65%;
+    --terminal-output: 220 10% 80%;
+    --terminal-system: 197 71% 73%;
+    --terminal-prompt: 142 70% 65%;
+    --terminal-timestamp: 220 10% 50%;
+
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }

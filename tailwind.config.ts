@@ -62,6 +62,15 @@ export default {
 					orange: 'hsl(var(--cyber-orange))',
 					red: 'hsl(var(--cyber-red))'
 				},
+				// Terminal colors
+				'terminal-bg': 'hsl(var(--terminal-bg))',
+				'terminal-border': 'hsl(var(--terminal-border))',
+				'terminal-text': 'hsl(var(--terminal-text))',
+				'terminal-input': 'hsl(var(--terminal-input))',
+				'terminal-output': 'hsl(var(--terminal-output))',
+				'terminal-system': 'hsl(var(--terminal-system))',
+				'terminal-prompt': 'hsl(var(--terminal-prompt))',
+				'terminal-timestamp': 'hsl(var(--terminal-timestamp))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
