@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import { NessusLab } from "./pages/NessusLab";
 import { LearningPath } from "./pages/LearningPath";
+import { Assessment } from "./pages/Assessment";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
         <Route path="/" element={<Index />} />
         <Route path="/lab/:id" element={<NessusLab />} />
         <Route path="/path/:id" element={<LearningPath />} />
+        <Route path="/assessment/:category" element={<Assessment />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

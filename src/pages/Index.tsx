@@ -1,14 +1,19 @@
+import React, { useState } from 'react';
 import { Header } from "@/components/Header";
 import { GameStats } from "@/components/GameStats";
 import { LearningPaths } from "@/components/LearningPaths";
 import { NessusLabs } from "@/components/NessusLabs";
 import { RecentActivity } from "@/components/RecentActivity";
+import { AdvancedNessusLab } from "@/components/AdvancedNessusLab";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Shield, Play, TrendingUp } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Shield, Play, TrendingUp, Terminal, Zap } from "lucide-react";
 import heroImage from "@/assets/cyber-hero.jpg";
 
 const Index = () => {
+  const [showAdvancedLab, setShowAdvancedLab] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -48,6 +53,34 @@ const Index = () => {
 
       {/* Main Dashboard */}
       <main className="container mx-auto px-4 py-8 space-y-8">
+        <div className="mb-8">
+          <Card className="bg-gradient-secondary border-border shadow-card">
+            <CardHeader>
+              <CardTitle className="text-xl flex items-center gap-2">
+                <Terminal className="h-6 w-6 text-primary" />
+                Advanced Nessus Training Sandbox
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground mb-4">
+                Access our advanced Nessus vulnerability assessment sandbox with real-world scenarios, 
+                comprehensive reporting, and hands-on security training exercises.
+              </p>
+              <Dialog open={showAdvancedLab} onOpenChange={setShowAdvancedLab}>
+                <DialogTrigger asChild>
+                  <Button className="flex items-center gap-2">
+                    <Zap className="h-4 w-4" />
+                    Launch Advanced Sandbox
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-7xl max-h-[95vh] overflow-y-auto">
+                  <AdvancedNessusLab />
+                </DialogContent>
+              </Dialog>
+            </CardContent>
+          </Card>
+        </div>
+
         <GameStats />
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
