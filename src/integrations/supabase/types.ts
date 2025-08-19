@@ -14,7 +14,358 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      assessments: {
+        Row: {
+          answers: Json | null
+          category: string
+          completed_at: string | null
+          correct_answers: number | null
+          created_at: string
+          id: string
+          questions_answered: number | null
+          score: number | null
+          time_spent_seconds: number | null
+          total_questions: number | null
+          user_id: string
+        }
+        Insert: {
+          answers?: Json | null
+          category: string
+          completed_at?: string | null
+          correct_answers?: number | null
+          created_at?: string
+          id?: string
+          questions_answered?: number | null
+          score?: number | null
+          time_spent_seconds?: number | null
+          total_questions?: number | null
+          user_id: string
+        }
+        Update: {
+          answers?: Json | null
+          category?: string
+          completed_at?: string | null
+          correct_answers?: number | null
+          created_at?: string
+          id?: string
+          questions_answered?: number | null
+          score?: number | null
+          time_spent_seconds?: number | null
+          total_questions?: number | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      badges: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          icon: string | null
+          id: string
+          name: string
+          points_value: number | null
+          requirements: Json | null
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description?: string | null
+          icon?: string | null
+          id?: string
+          name: string
+          points_value?: number | null
+          requirements?: Json | null
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          icon?: string | null
+          id?: string
+          name?: string
+          points_value?: number | null
+          requirements?: Json | null
+        }
+        Relationships: []
+      }
+      learning_paths: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          difficulty: string
+          duration_minutes: number | null
+          id: string
+          modules: Json | null
+          objectives: string[] | null
+          prerequisites: string[] | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description?: string | null
+          difficulty: string
+          duration_minutes?: number | null
+          id?: string
+          modules?: Json | null
+          objectives?: string[] | null
+          prerequisites?: string[] | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          difficulty?: string
+          duration_minutes?: number | null
+          id?: string
+          modules?: Json | null
+          objectives?: string[] | null
+          prerequisites?: string[] | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      nessus_labs: {
+        Row: {
+          commands: Json | null
+          created_at: string
+          description: string | null
+          difficulty: string
+          duration_minutes: number | null
+          id: string
+          instructions: string[] | null
+          lab_type: string | null
+          objectives: string[] | null
+          title: string
+          updated_at: string
+          vulnerabilities: number | null
+        }
+        Insert: {
+          commands?: Json | null
+          created_at?: string
+          description?: string | null
+          difficulty: string
+          duration_minutes?: number | null
+          id?: string
+          instructions?: string[] | null
+          lab_type?: string | null
+          objectives?: string[] | null
+          title: string
+          updated_at?: string
+          vulnerabilities?: number | null
+        }
+        Update: {
+          commands?: Json | null
+          created_at?: string
+          description?: string | null
+          difficulty?: string
+          duration_minutes?: number | null
+          id?: string
+          instructions?: string[] | null
+          lab_type?: string | null
+          objectives?: string[] | null
+          title?: string
+          updated_at?: string
+          vulnerabilities?: number | null
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          department: string | null
+          email: string | null
+          full_name: string | null
+          id: string
+          points: number | null
+          rank: number | null
+          role: string | null
+          specialization: string | null
+          streak_days: number | null
+          total_hours: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          department?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          points?: number | null
+          rank?: number | null
+          role?: string | null
+          specialization?: string | null
+          streak_days?: number | null
+          total_hours?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          department?: string | null
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          points?: number | null
+          rank?: number | null
+          role?: string | null
+          specialization?: string | null
+          streak_days?: number | null
+          total_hours?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      scan_results: {
+        Row: {
+          created_at: string
+          hosts_scanned: number | null
+          id: string
+          lab_id: string | null
+          progress: number | null
+          scan_id: string
+          scan_time_seconds: number | null
+          scan_type: string
+          status: string
+          target_network: string | null
+          updated_at: string
+          user_id: string
+          vulnerabilities_found: Json | null
+        }
+        Insert: {
+          created_at?: string
+          hosts_scanned?: number | null
+          id?: string
+          lab_id?: string | null
+          progress?: number | null
+          scan_id: string
+          scan_time_seconds?: number | null
+          scan_type: string
+          status?: string
+          target_network?: string | null
+          updated_at?: string
+          user_id: string
+          vulnerabilities_found?: Json | null
+        }
+        Update: {
+          created_at?: string
+          hosts_scanned?: number | null
+          id?: string
+          lab_id?: string | null
+          progress?: number | null
+          scan_id?: string
+          scan_time_seconds?: number | null
+          scan_type?: string
+          status?: string
+          target_network?: string | null
+          updated_at?: string
+          user_id?: string
+          vulnerabilities_found?: Json | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "scan_results_lab_id_fkey"
+            columns: ["lab_id"]
+            isOneToOne: false
+            referencedRelation: "nessus_labs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_badges: {
+        Row: {
+          badge_id: string
+          earned_at: string
+          id: string
+          user_id: string
+        }
+        Insert: {
+          badge_id: string
+          earned_at?: string
+          id?: string
+          user_id: string
+        }
+        Update: {
+          badge_id?: string
+          earned_at?: string
+          id?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "user_badges_badge_id_fkey"
+            columns: ["badge_id"]
+            isOneToOne: false
+            referencedRelation: "badges"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      user_progress: {
+        Row: {
+          commands_executed: string[] | null
+          completed_at: string | null
+          completed_objectives: number | null
+          created_at: string
+          id: string
+          item_id: string
+          item_type: string
+          progress_percentage: number | null
+          score: number | null
+          started_at: string | null
+          status: string
+          time_spent_minutes: number | null
+          total_objectives: number | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          commands_executed?: string[] | null
+          completed_at?: string | null
+          completed_objectives?: number | null
+          created_at?: string
+          id?: string
+          item_id: string
+          item_type: string
+          progress_percentage?: number | null
+          score?: number | null
+          started_at?: string | null
+          status?: string
+          time_spent_minutes?: number | null
+          total_objectives?: number | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          commands_executed?: string[] | null
+          completed_at?: string | null
+          completed_objectives?: number | null
+          created_at?: string
+          id?: string
+          item_id?: string
+          item_type?: string
+          progress_percentage?: number | null
+          score?: number | null
+          started_at?: string | null
+          status?: string
+          time_spent_minutes?: number | null
+          total_objectives?: number | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
