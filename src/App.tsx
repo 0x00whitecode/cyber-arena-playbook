@@ -8,23 +8,28 @@ import NotFound from "./pages/NotFound";
 import { NessusLab } from "./pages/NessusLab";
 import { LearningPath } from "./pages/LearningPath";
 import { Assessment } from "./pages/Assessment";
+import { Auth } from "./pages/Auth";
+import { AuthProvider } from "./hooks/useAuth";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/lab/:id" element={<NessusLab />} />
-        <Route path="/path/:id" element={<LearningPath />} />
-        <Route path="/assessment/:category" element={<Assessment />} />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </TooltipProvider>
+    <AuthProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/lab/:id" element={<NessusLab />} />
+          <Route path="/path/:id" element={<LearningPath />} />
+          <Route path="/assessment/:category" element={<Assessment />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </TooltipProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 
